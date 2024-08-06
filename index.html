@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Management system</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  background-image: url("images/airplane-taking-off-from-airport_37416-74 (1).webp");
+  background-size: cover;
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+  font-size: 16px;
+  animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 5px;
+}
+nav ul li form button[type="submit"] {
+  height: 25px;
+  padding: 0 8px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+section#banner {
+  text-align: center;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  font-size: 25px;
+  font-style: oblique;
+  animation: fadeIn 1s;
+}
+
+section#features {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  font-size: larger;
+  color: white;
+}
+
+.feature {
+  text-align: center;
+  margin: 0 20px;
+  animation: slideIn 1s;
+}
+
+.feature img {
+  width: 400px;
+  height: 350px;
+  border: 5px solid white;
+  font-size: 25px;
+  animation: fadeIn 1s;
+}
+
+.feature h3 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.feature p {
+  color: white;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-style: oblique;
+  animation: fadeIn 1s;
+  font-size: 12px;
+}
+</style>
+<body>
+<header>
+  <h1>Airline Management System</h1><br>
+  <nav>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="Booking.html">Booking</a></li>
+      <li><a href="web check.html">Web Check-in</a></li>
+      <li><a href="flight status.html">Flight Status</a></li>
+      <li><a href="Partner Registration.html">Partner Registration</a></li>
+      <li><a href="customer details.html">Customer Details</a></li>
+      <li><a href="Payment.html">Payment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="banner">
+  <h2>Welcome to Airline Management System</h2>
+  <p>Efficiently manage your airline operations with our comprehensive management system.</p>
+</section>
+
+<section id="features">
+  <div class="feature">
+    <img src="images/randy-fath-ls_GYDYagz4-unsplash.jpg" alt="Flights">
+    <h3>Flights</h3>
+    <p>Manage flight schedules, routes, and availability.</p>
+  </div>
+  <div class="feature">
+    <img src="images/female-staff-checking-boarding-pass-passengers-check-counter_107420-63617.webp" alt="Passengers">
+    <h3>Passengers</h3>
+    <p>Handle passenger information and bookings.</p>
+  </div>
+  <div class="feature">
+    <img src="images/istockphoto-626867464-612x612.jpg" alt="Bookings">
+    <h3>Bookings</h3>
+    <p>Track and manage flight bookings and reservations.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Airline Management. All rights reserved.</p>
+  <p>Contact us<br>Fax: +9111-43513200</p>
+</footer>
+</body>
+</html>

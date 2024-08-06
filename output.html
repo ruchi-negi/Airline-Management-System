@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid purple;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h2 {
+      color: red;
+    }
+    .details {
+      margin-bottom: 20px;
+      color: green;
+    }
+    .details label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Details</h2>
+    <div class="details">
+      <label for="name">Name:</label>
+      <span id="displayName"></span>
+    </div>
+    <div class="details">
+      <label for="email">Email:</label>
+      <span id="displayEmail"></span>
+    </div>
+    <div class="details">
+      <label for="password">Password:</label>
+      <span id="displayPassword"></span>
+    </div>
+    <a href="index.html">Back to Registration/Login</a>
+  </div>
+
+  <script>
+    // Get query parameters from URL
+    const queryParams = new URLSearchParams(window.location.search);
+    const type = queryParams.get('type');
+
+    // If the type is 'registration', display registration data
+    if (type === 'registration') {
+      const formData = JSON.parse(localStorage.getItem('formData'));
+
+      if (formData) {
+        document.getElementById('displayName').textContent = formData.name;
+        document.getElementById('displayEmail').textContent = formData.email;
+        document.getElementById('displayPassword').textContent = formData.password;
+      } else {
+        document.getElementById('displayName').textContent = 'No data available';
+        document.getElementById('displayEmail').textContent = 'No data available';
+        document.getElementById('displayPassword').textContent = 'No data available';
+      }
+    }
+
+    // Clear the form data from localStorage
+    localStorage.removeItem('formData');
+  </script>
+</body>
+</html>

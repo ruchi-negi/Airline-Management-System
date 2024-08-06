@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Login - Output</title>
+  <style>
+    /* Styles for the output page */
+    body {
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+      background-image: url("images/randy-fath-ls_GYDYagz4-unsplash.jpg");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 25px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px yellow;
+      text-align: center;
+      border: 6px solid purple;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      color: #f44336;
+      font-style: initial;
+    }
+
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .output.success {
+      color: #4CAF50;
+    }
+
+    .output.error {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login Details:</h2>
+    <div id="outputContainer"></div>
+  </div>
+
+  <script>
+    // Retrieve the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('username');
+const password = urlParams.get('password');
+
+// Display the output on the next page
+const outputContainer = document.getElementById('outputContainer');
+outputContainer.innerHTML = `
+  <p><strong>Username:</strong> ${username}</p>
+  <p><strong>Password:</strong> ${password}</p>
+`;
+</script>
+</body>
+</html>

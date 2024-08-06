@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Login</title>
+  <style>
+    /* Styles for login page */
+    body {
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+      background-image: url("images/randy-fath-ls_GYDYagz4-unsplash.jpg");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 25px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px yellow;
+      text-align: center;
+      border: 6px solid purple;
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      color: #f44336;
+      font-style: initial;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1s;
+    }
+
+    .btn-container button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .btn-container button.login {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .btn-container button.cancel {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .btn-container button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login form -->
+    <form id="loginForm" action="next-page.html" method="get">
+      <h2>Welcome to Airline Management<br>Login</h2>
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <div class="btn-container">
+        <button class="login" type="submit">Submit</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

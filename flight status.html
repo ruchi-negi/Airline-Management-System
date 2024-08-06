@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Flight Status</title>
+  <style>
+    /* Basic styling for the flight status display */
+    body {
+      margin: 0;
+      padding: 60px;
+      font-family: Arial, sans-serif;
+      background-image: url("images/miguel-angel-sanz-1tpJ00cSD4M-unsplash.jpg");
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 6px solid black;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    h2 {
+      text-align: center;
+      color:red;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .flight-status {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+      background-color: #f2f2f2;
+    }
+
+    .flight-status h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .flight-status p {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .flight-status .departure {
+      color: #4CAF50;
+    }
+
+    .flight-status .arrival {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Airline Flight Status</h2>
+    <form id="flightStatusForm">
+      <div class="form-group">
+        <label for="flightNumber">Flight Number:</label>
+        <input type="text" id="flightNumber" required>
+      </div>
+      <button type="submit">Check Status</button>
+    </form>
+    <div class="flight-status">
+      <h3>Flight Status:</h3>
+      <p><strong>Flight Number:</strong> <span id="statusFlightNumber"></span></p>
+      <p><strong>Departure Status:</strong> <span id="statusDeparture"></span></p>
+      <p><strong>Arrival Status:</strong> <span id="statusArrival"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Handling form submission
+    const flightStatusForm = document.getElementById('flightStatusForm');
+    flightStatusForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Retrieve form value
+      const flightNumber = document.getElementById('flightNumber').value;
+
+      // Simulate API call to fetch flight status
+
+      const departureStatus = getRandomStatus();
+      const arrivalStatus = getRandomStatus();
+
+      // Update flight status display
+      document.getElementById('statusFlightNumber').textContent = flightNumber;
+      document.getElementById('statusDeparture').textContent = departureStatus;
+      document.getElementById('statusArrival').textContent = arrivalStatus;
+
+      // Display flight status with animation
+      const flightStatus = document.querySelector('.flight-status');
+      flightStatus.style.display = 'block';
+      flightStatus.style.animation = 'fadeIn 1s';
+
+      // Reset the form
+      flightStatusForm.reset();
+    });
+
+    // Function to generate random flight status (for demonstration purposes)
+    function getRandomStatus() {
+      const statuses = ['On Time', 'Delayed', 'Cancelled'];
+      const randomIndex = Math.floor(Math.random() * statuses.length);
+      return statuses[randomIndex];
+    }
+  </script>
+</body>
+</html>

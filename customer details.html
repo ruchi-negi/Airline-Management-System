@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Details</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-image: url("images/large-jetliner-flying-mountain-range-generative-ai_733139-8008.webp");
+  background-size: cover;
+}
+.customer-details {
+  margin-top: 20px;
+  display: none;
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 5px;
+  color: blue;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.customer-details h3 {
+  color: #333;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.customer-details p {
+  margin-bottom: 5px;
+  color: #333;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Customer Details</h2>
+    <form id="customerDetailsForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <select id="country" required>
+          <option value="">Select country</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="India">India</option>
+        </select>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="customer-details">
+      <h3>Customer Details:</h3>
+      <p><strong>Name:</strong> <span id="customerName"></span></p>
+      <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+      <p><strong>Phone Number:</strong> <span id="customerPhone"></span></p>
+      <p><strong>Country:</strong> <span id="customerCountry"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // form submission
+    const customerDetailsForm = document.getElementById('customerDetailsForm');
+    customerDetailsForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      //  form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const country = document.getElementById('country').value;
+
+      // Update customer 
+      document.getElementById('customerName').textContent = name;
+      document.getElementById('customerEmail').textContent = email;
+      document.getElementById('customerPhone').textContent = phone;
+      document.getElementById('customerCountry').textContent = country;
+
+      // Display details
+      const customerDetails = document.querySelector('.customer-details');
+      customerDetails.style.display = 'block';
+
+      // Reset the form
+      customerDetailsForm.reset();
+    });
+  </script>
+</body>
+</html>

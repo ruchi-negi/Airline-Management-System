@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Ticket Booking</title>
+  <style>
+    /* Basic styling for the form */
+    body {
+      font-family: Arial, sans-serif;
+      background-image:url("images/airplane-taking-off-from-airport_37416-74 (1).webp");
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 5px solid purple;
+      border-radius: 5px;
+      box-shadow: 0 0 0 10px plum;
+      background-color: #f2f2f2;
+      animation: slideIn 1s;
+    }
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      color: red;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .booking-details {
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 4px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Airline Ticket Booking</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <select id="destination" required>
+          <option value="">Select destination</option>
+          <option value="New York">New York</option>
+          <option value="London">London</option>
+          <option value="Paris">Paris</option>
+          <option value="Tokyo">Tokyo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+      </div>
+      <button type="submit">Book Now</button>
+    </form>
+
+    <div class="booking-details" id="bookingDetails">
+      <h3>Booking Details</h3>
+      <p><strong>Name:</strong> <span id="bookingName"></span></p>
+      <p><strong>Email:</strong> <span id="bookingEmail"></span></p>
+      <p><strong>Destination:</strong> <span id="bookingDestination"></span></p>
+      <p><strong>Date:</strong> <span id="bookingDate"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // form submission
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const destination = document.getElementById('destination').value;
+      const date = document.getElementById('date').value;
+
+      // Show booking details
+      const bookingDetails = document.getElementById('bookingDetails');
+      bookingDetails.style.opacity = '1';
+      document.getElementById('bookingName').textContent = name;
+      document.getElementById('bookingEmail').textContent = email;
+      document.getElementById('bookingDestination').textContent = destination;
+      document.getElementById('bookingDate').textContent = date;
+
+      // Reset the form
+      bookingForm.reset();
+    });
+  </script>
+</body>
+</html>
